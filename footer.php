@@ -1,10 +1,10 @@
 </body>
 
-<footer class="bg-light text-center text-lg-start">
+<footer class="bg-dark text-center text-lg-start">
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center text-white p-2">
     © 2023 Copyright:&nbsp; Desenvolvido por 
-    <a class="text-dark" href="#!">Rafael Alves</a>
+    <a class="text-white" href="#!">Rafael Alves</a>
   </div>
   <!-- Copyright -->
 </footer>

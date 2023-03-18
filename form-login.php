@@ -1,7 +1,7 @@
 <?php include_once "header.php" ?>
 
 <main>
-    <section class="vh-100 gradient-custom" style="background-color: #403d39;">
+    <section class="vh-100 gradient-custom bg-secondary">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
