@@ -1,10 +1,14 @@
-<?php include_once "header.php" ?>
+<?php 
+include_once "header.php";
+include_once "conexao_db.php";
+
+?>
 
 <main>
     <div class="container-fluid">
         <table>
             <tr>
-                <td><a href="form-login.php"><img src="img/1679098776.jpg" height="150px" alt="Imagem"></a></td>
+                <td><a href=""><img src="img/1679098776.jpg" height="150px" alt="Imagem"></a></td>
             </tr>
             <tr>
                 <td class="text-center">Trigue</td>
