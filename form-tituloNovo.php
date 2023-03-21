@@ -1,9 +1,9 @@
 <?php include_once "header.php" ?>
 
-<main >
-    <div class="bg-secondary">
-    <div class="container pb-5 bg-danger">
-        <form method="post" action="cadastrar-tituloNovo.php" enctype="multipart/form-data" class="row g-3 d-flex justify-content-center pt-5">
+<main>
+    <div class="container pb-5 bg-dark">
+        <form method="post" action="cadastrar-tituloNovo.php" enctype="multipart/form-data"
+            class="row g-3 d-flex justify-content-center pt-5">
             <h2 class="text-center text-white">Cadastrar título</h2>
             <div class="col-8">
                 <label class="form-label text-white">Título:</label>
@@ -35,7 +35,6 @@
             </div>
             <button class="btn btn-outline-light btn-lg px-5 col-5 mb-5" type="submit">Cadastrar</button>
         </form>
-    </div>
     </div>
 </main>
 

@@ -1,20 +1,28 @@
-<?php 
+<?php
 include_once "header.php";
 include_once "conexao_db.php";
 
+$sqlTitulos = "SELECT * FROM tb_titulos";
+$arrayTitulos = mysqli_query($conexao,$sqlTitulos);
+
+echo '<main class="container-fluid">';
+echo '<div class="row">';
+while($umTitulo = mysqli_fetch_assoc($arrayTitulos)){
+    echo "<div class='col-2 h-100'>";
+    echo '<a class="text-decoration-none link-light" href="">';
+    echo    '<div class="card bg-dark text-white mt-2 mb-2">';
+    echo        '<img src="img/'.$umTitulo['img'].' " class="imgsize" class="card-img-top imagem" alt="Imagem do titulo" >';
+    echo        '<div class="card-body">';
+    echo            '<h5 class="card-title">'.$umTitulo['titulo'].'</h5>';
+    echo        '</div>';
+    echo    '</div>';
+    echo '</a>';
+    echo "</div>";
+}
+echo '</div>';
+echo '</main>';
+$conexao->close();
+
+include_once "footer.php"
 ?>
 
-<main>
-    <div class="container-fluid">
-        <table>
-            <tr>
-                <td><a href=""><img src="img/1679098776.jpg" height="150px" alt="Imagem"></a></td>
-            </tr>
-            <tr>
-                <td class="text-center">Trigue</td>
-            </tr>
-        </table>
-    </div>
-</main>
-
-<?php include_once "footer.php" ?>

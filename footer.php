@@ -1,6 +1,6 @@
 </body>
 
-<footer class="bg-dark text-center text-lg-start">
+<footer class="bg-dark text-center text-lg-start"> 
   <!-- Copyright -->
   <div class="text-center text-white p-2">
     © 2023 Copyright:&nbsp; Desenvolvido por 
