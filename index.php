@@ -13,7 +13,7 @@ while($umTitulo = mysqli_fetch_assoc($arrayTitulos)){
     echo    '<div class="card bg-dark text-white mt-2 mb-2">';
     echo        '<img src="img/'.$umTitulo['img'].' " class="imgsize" class="card-img imagem" alt="Imagem do titulo" >';
     echo        '<div class="card-img-overlay">';
-    echo            '<h5 class="card-title">'.$umTitulo['titulo'].'</h5>';
+    echo            '<h5 class="card-title" class="sombra-texto">'.$umTitulo['titulo'].'</h5>';
     echo        '</div>';
     echo    '</div>';
     echo '</a>';

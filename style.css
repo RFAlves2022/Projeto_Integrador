@@ -1,17 +1,23 @@
-.imgsize{
-    height: 350px;
-    object-fit: cover;
+.imgsize {
+  height: 350px;
+  object-fit: cover;
 }
 
 .card-title {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .card:hover .card-title {
-    opacity: 1;
-  }
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
 
-h5{
+.card:hover .card-title {
+  opacity: 1;
+}
+
+.sombra-texto {
   text-shadow: 2px 2px black;
 }
+
+.footer-unico{
+position: absolute;
+      bottom: 0;
+}
+

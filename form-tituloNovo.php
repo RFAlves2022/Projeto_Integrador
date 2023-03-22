@@ -26,7 +26,7 @@
                 <textarea class="form-control" rows="3" name="sinopse"></textarea>
             </div>
             <div class="col-8">
-                <label class="form-label text-white">Link do trailer(yt):</label>
+                <label class="form-label text-white">Link (iframe encorporado YouTube):</label>
                 <input type="text" class="form-control" name="linkTrailer">
             </div>
             <div class="col-8 mb-3">
