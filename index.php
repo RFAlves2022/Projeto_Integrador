@@ -11,8 +11,8 @@ while($umTitulo = mysqli_fetch_assoc($arrayTitulos)){
     echo "<div class='col-2 h-100'>";
     echo '<a class="text-decoration-none link-light" href="pagina-filme.php?id='. $umTitulo['id'] .'">';
     echo    '<div class="card bg-dark text-white mt-2 mb-2">';
-    echo        '<img src="img/'.$umTitulo['img'].' " class="imgsize" class="card-img-top imagem" alt="Imagem do titulo" >';
-    echo        '<div class="card-body">';
+    echo        '<img src="img/'.$umTitulo['img'].' " class="imgsize" class="card-img imagem" alt="Imagem do titulo" >';
+    echo        '<div class="card-img-overlay">';
     echo            '<h5 class="card-title">'.$umTitulo['titulo'].'</h5>';
     echo        '</div>';
     echo    '</div>';
@@ -21,8 +21,9 @@ while($umTitulo = mysqli_fetch_assoc($arrayTitulos)){
 }
 echo '</div>';
 echo '</main>';
-$conexao->close();
 
-include_once "footer.php"
+$conexao->close();
 ?>
+<?php include_once "footer.php"?>
+
 
