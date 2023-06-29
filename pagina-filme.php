@@ -7,7 +7,7 @@ $arrayTitulo = mysqli_query($conexao, $sql);
 $conteudoTitulo = mysqli_fetch_assoc($arrayTitulo);
 
 echo '
-<main class="container text-white bg-dark">
+<main class="container text-white bg-dark pt-5">
     <div class="row pt-4">
         <div class="col-6">
             <div class="ratio ratio-16x9 ">
@@ -15,9 +15,9 @@ echo '
             </div>
         </div>
         <div class="col-6">
-            <h1 class="mb-4">'.$conteudoTitulo['titulo'].'</h1>
-            <h5 class="mb-2">Elenco: '.$conteudoTitulo['elenco'].'</h5>
-            <h5 class="mb-2">Diretor: '.$conteudoTitulo['diretor'].'</h5>
+            <h1 class="mb-5" mt-2>'.$conteudoTitulo['titulo'].'</h1>
+            <h5 class="mb-4 mx-2">Elenco: '.$conteudoTitulo['elenco'].'</h5>
+            <h5 class="mb-4 mx-2">Diretor: '.$conteudoTitulo['diretor'].'</h5>
             <h5>Gênero: '.$conteudoTitulo['genero'].'</li>
         </div>
     </div>
