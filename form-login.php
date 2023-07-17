@@ -1,4 +1,37 @@
-<?php include_once "header.php" ?>
+<?php
+session_start();
+// Verificar se o usuário já está logado
+if (isset($_SESSION['username'])) {
+    header("location:favoritos.php");
+    exit();
+}
+
+// Verificar se o formulário foi submetido
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obter os dados do formulário
+    $username = $_POST["username"];
+    $senha = $_POST["senha"];
+    $senha = md5($senha);
+
+    // Verificar as credenciais do usuário
+    include_once "conexao_db.php";
+
+    $sql = "SELECT * FROM tb_usuarios WHERE username = '$username' AND senha = '$senha'";
+    $result = mysqli_query($conexao, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        // Login bem-sucedido, iniciar a sessão
+        $_SESSION['username'] = $username;
+
+        header("location:favoritos.php");
+        exit();
+    } else {
+        $erro = "Nome de usuário ou senha inválidos!";
+    }
+}
+
+include_once "header.php";
+?>
 
 <main>
     <section class="vh-100 gradient-custom">
@@ -9,20 +42,20 @@
                         <div class="card-body p-5 text-center">
 
                             <div class="mb-md-5 mt-md-4 pb-5">
-                                <form method="post" action="validar-login.php">
+                                <form method="post" action="">
                                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                     <br>
                                     <p>Preencha os campos para entrar</p>
                                     <br>
+                                    <?php if (isset($erro)) { echo "<p>$erro</p>"; } ?>
                                     <div class="form-outline mb-4">
-                                        <label class="form-label" for="typeEmailX">E-mail</label>
-                                        <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg" />
+                                        <label class="form-label" for="typeEmailX">Nome de usuário</label>
+                                        <input type="text" name="username" id="username" class="form-control form-control-lg" />
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                         <label class="form-label" for="typePasswordX">Senha</label>
-                                        <input type="password" name="senha" id="typePasswordX"
-                                            class="form-control form-control-lg" />
+                                        <input type="password" name="senha" id="senha" class="form-control form-control-lg" />
                                     </div>
 
                                     <button class="btn btn-outline-light btn-lg px-5" type="submit">Entrar</button>
@@ -31,8 +64,7 @@
                             </div>
 
                             <div>
-                                <p class="mb-0">Crie um perfil para entrar!<br><a href="form-cadastro.php"
-                                        class="text-white-50 fw-bold">Cadastrar-se</a>
+                                <p class="mb-0">Crie um perfil para entrar!<br><a href="form-cadastro.php" class="text-white-50 fw-bold">Cadastrar-se</a>
                                 </p>
                             </div>
 
