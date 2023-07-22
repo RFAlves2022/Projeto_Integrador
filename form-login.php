@@ -2,7 +2,7 @@
 session_start();
 // Verificar se o usuário já está logado
 if (isset($_SESSION['username'])) {
-    header("location:favoritos.php");
+    header("location:index.php");
     exit();
 }
 
