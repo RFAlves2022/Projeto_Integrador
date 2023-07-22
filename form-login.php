@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Login bem-sucedido, iniciar a sessão
         $_SESSION['username'] = $username;
 
-        header("location:favoritos.php");
+        header("location:pagina-favoritos.php");
         exit();
     } else {
         $erro = "Nome de usuário ou senha inválidos!";
