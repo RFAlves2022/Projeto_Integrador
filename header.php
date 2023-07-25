@@ -19,7 +19,10 @@
             <a class="navbar-brand mx-auto" href="index.php">
                 <span class="navbar-text text-center">Inicio</span>
             </a>
-            <?php if (isset($_SESSION['username'])) { ?>
+            <?php
+            session_start();
+             if (isset($_SESSION['username'])) { 
+            ?>
                 <!-- Botão de logout -->
                 <div class="navbar-collapse justify-content-end">
                     <ul class="navbar-nav">

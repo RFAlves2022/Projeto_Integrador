@@ -1,9 +1,6 @@
 <?php
-session_start();
-
-include_once "conexao_db.php";
 include_once "header.php";
-
+include_once "conexao_db.php";
 $id = $_GET['id'];
 $sql = "SELECT * FROM tb_titulos WHERE id = ?";
 $stmt = $conexao->prepare($sql);
@@ -82,10 +79,13 @@ echo '
             <p>' . $conteudoTitulo['sinopse'] . '</p>
         </div>
     </div>
-    <form method="post">
-        <input type="hidden" name="filme_id" value="' . $id . '">
-        <button class="btn btn-outline-light btn-lg pt-3 pb-3" type="submit">Adicionar aos Favoritos</button>
-    </form>
+    <div>
+    <div class="d-flex justify-content-center align-items-center">
+        <form method="post">
+            <input type="hidden" name="filme_id" value="' . $id . '">
+            <button class="btn btn-outline-light mt-3 btn-lg pt-3 pb-3 active" type="submit">Adicionar aos Favoritos</button>
+        </form>
+    </div>
 </main>
 </body>
 ';

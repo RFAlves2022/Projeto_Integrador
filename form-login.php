@@ -1,5 +1,6 @@
 <?php
-session_start();
+include_once "header.php";
+include_once "conexao_db.php";
 // Verificar se o usuário já está logado
 if (isset($_SESSION['username'])) {
     header("location:index.php");
@@ -14,8 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = md5($senha);
 
     // Verificar as credenciais do usuário
-    include_once "conexao_db.php";
-
     $sql = "SELECT * FROM tb_usuarios WHERE username = '$username' AND senha = '$senha'";
     $result = mysqli_query($conexao, $sql);
 
@@ -26,14 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['user_id'] = $usuario['id'];
         }
-        header("location:pagina-favoritos.php");
+        header("location:index.php");
         exit();
     } else {
         $erro = "Nome de usuário ou senha inválidos!";
     }
 }
-
-include_once "header.php";
 ?>
 
 <main>
@@ -41,7 +38,7 @@ include_once "header.php";
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card bg-light text-dark" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
 
                             <div class="mb-md-5 mt-md-4 pb-5">
@@ -61,13 +58,13 @@ include_once "header.php";
                                         <input type="password" name="senha" id="senha" class="form-control form-control-lg" />
                                     </div>
 
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Entrar</button>
+                                    <button class="btn btn-outline-dark btn-lg px-5" type="submit">Entrar</button>
 
                                 </form>
                             </div>
 
                             <div>
-                                <p class="mb-0">Crie um perfil para entrar!<br><a href="form-cadastro.php" class="text-white-50 fw-bold">Cadastrar-se</a>
+                                <p class="mb-0">Crie um perfil para entrar!<br><a href="form-cadastro.php" class="text-dark-50 fw-bold">Cadastrar-se</a>
                                 </p>
                             </div>
 
@@ -78,6 +75,7 @@ include_once "header.php";
         </div>
     </section>
 </main>
+
 
 
 <?php include_once "footer.php" ?>

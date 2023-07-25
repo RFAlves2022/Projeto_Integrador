@@ -1,14 +1,11 @@
 <?php
+include_once "header.php";
+include_once "conexao_db.php";
 // Verifica se o usuário está autenticado, caso contrário redireciona para a página de login
-session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: form-login.php");
     exit();
 }
-
-include_once "header.php";
-include_once "conexao_db.php";
-
 // Recupera o ID do usuário autenticado
 $userId = $_SESSION['user_id'];
 

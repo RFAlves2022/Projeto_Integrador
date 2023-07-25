@@ -1,6 +1,6 @@
 <?php
-session_start();
-
+include_once "header.php";
+include_once "conexao_db.php";
 // Verifica se o usuário está autenticado
 if (!isset($_SESSION['username'])) {
     header("Location: form-login.php");
@@ -11,9 +11,6 @@ if (!isset($_SESSION['username'])) {
 if (isset($_GET['excluir']) && !empty($_GET['excluir'])) {
     $filmeIdExcluir = $_GET['excluir'];
     $userId = $_SESSION['user_id'];
-
-    // Conecta ao banco de dados
-    include_once "conexao_db.php";
 
     // Remove o filme dos favoritos do usuário
     $sql_excluir_favorito = "DELETE FROM tb_favoritos WHERE filme_id = ? AND usuario_id = ?";
