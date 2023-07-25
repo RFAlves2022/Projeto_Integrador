@@ -22,7 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) == 1) {
         // Login bem-sucedido, iniciar a sessão
         $_SESSION['username'] = $username;
+        while($usuario=mysqli_fetch_assoc($result)){
 
+        $_SESSION['user_id'] = $usuario['id'];
+        }
         header("location:pagina-favoritos.php");
         exit();
     } else {
